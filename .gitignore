@@ -1,3 +1,6 @@
 *.o
 
 wordle
+
+userstats.csv
+allwords.inc
