@@ -2,6 +2,7 @@
 #define GAMELOGIC_H
 #include <stdbool.h>
 
+extern bool hardMode;
 extern bool gameFinished;
 extern char solution[];
 extern int writePos;

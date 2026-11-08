@@ -4,5 +4,6 @@
 
 extern const char *words[];
 bool isWord(const char *word);
+void genWord(bool isRandom);
 
 #endif

@@ -59,8 +59,7 @@ void performBackspace(){
 
 void performEnter(){
   if (!(writePos == 4 && activeRowText[writePos] != '_')) { return; }
-  else if (isWord(activeRowText) == false) { return; } //placeholder
-  else { submitRow(activeRowText); }
+  else if (isWord(activeRowText)) { submitRow(activeRowText); }
 }
 
 

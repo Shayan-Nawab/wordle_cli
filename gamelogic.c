@@ -5,18 +5,23 @@
 
 #include "display.h"
 
+bool hardMode = false;
 bool gameFinished = false;
 char solution[] = "SLIDE";
 int writePos = 0;
 int activeRow = 0;
 char activeRowText[] = "_____";
 
+
 void winGame(){
   printf("You won!\n"); gameFinished = true;
 }
+
+
 void loseGame(){
   printf("You Lost!\n"); gameFinished = true;
 }
+
 
 void printColors(){
 
@@ -27,6 +32,7 @@ void printColors(){
   for (int i = 0; i < 5; i++){ //mark all chars in the right spot
     if ( activeRowText[i] == solution2[i] ) { colors[i] = 2; solution2[i] = '?';}
   }
+
   for (int i = 0; i < 5; i++){
     if ( colors[i] == 2 ) { continue; }
     for (int j = 0; j < 5; j++){
@@ -36,7 +42,6 @@ void printColors(){
         break;
       }
     }
-
   }
 
   char *coloredLetters[5];
@@ -51,10 +56,9 @@ void printColors(){
     }
   }
 
-
   editRowWithColors(5+2*activeRow, activeRowText, coloredLetters);
-
 }
+
 
 void submitRow(char *activeRowText){
   printColors();
@@ -67,12 +71,3 @@ void submitRow(char *activeRowText){
     memset(activeRowText, '_', 5);
   }
 }
-
-
-
-
-// To implement:
-// checkForWin()
-// winGame()
-// loseGame()
-// submitRow()

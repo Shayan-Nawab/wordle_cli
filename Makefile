@@ -5,7 +5,7 @@ all: wordle
 wordle: main.o input.o display.o words.o gamelogic.o
 	gcc $(FLAGS) -o wordle main.o input.o display.o words.o gamelogic.o
 
-main.o: main.c input.h display.h
+main.o: main.c input.h display.h gamelogic.h words.h
 	gcc $(FLAGS) -c main.c
 
 input.o: input.c gamelogic.h words.h display.h
