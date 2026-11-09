@@ -17,7 +17,7 @@ gamelogic.o: gamelogic.c display.h
 display.o: display.c
 	gcc $(FLAGS) -c display.c
 
-words.o: words.c allwords.inc
+words.o: words.c wordlist.inc
 	gcc $(FLAGS) -c words.c
 
 clean:
